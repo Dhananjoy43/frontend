@@ -84,3 +84,12 @@ export const getProjectsInfo = async () => {
     const projectsData = await client.fetch(quary);
     return projectsData;
 }
+
+export const getContactInfo = async () => {
+    const quary = `*[_type == 'contact']{
+            email,
+            "contactImage":contactImage.asset._ref
+    }`
+    const contactData = await client.fetch(quary);
+    return contactData[0];
+}

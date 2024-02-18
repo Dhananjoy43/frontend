@@ -6,8 +6,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { getContactInfo } from "@/lib/fetch-data";
+import { contactInfoTypes } from "@/Types";
+import { imageUrlFor } from "@/lib/sanity";
 
-const Contact = () => {
+const Contact = async () => {
+    const contactData: contactInfoTypes = await getContactInfo();
+    const { contactImage } = contactData;
     return (
         <section
             className="flex items-center justify-center px-4 md:px-40 my-10 w-full"
@@ -15,10 +20,10 @@ const Contact = () => {
         >
             <div className="md:flex items-center justify-center md:w-1/2 hidden">
                 <Image
-                    src={"/chatting-animate.svg"}
+                    src={imageUrlFor(contactImage).url()}
                     height={500}
                     width={500}
-                    alt="Chatting Animation"
+                    alt="Contact Image"
                 />
             </div>
             <div className="flex flex-col items-start justify-center gap-4 w-full md:w-1/2 p-2">

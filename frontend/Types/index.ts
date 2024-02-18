@@ -29,3 +29,8 @@ export interface socialLinksTypes {
     twitter: URL,
     facebook?: URL
 }
+
+export interface contactInfoTypes {
+    email: string,
+    contactImage: string
+}
