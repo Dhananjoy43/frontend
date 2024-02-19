@@ -54,6 +54,7 @@ export const getEducationInfo = async () => {
 
 export const getSkilllsInfo = async () => {
     const quary = `*[_type == 'skills']{
+            _id,
             title,
             technologies[]->{
                 name,

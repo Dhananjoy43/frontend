@@ -13,6 +13,12 @@ export interface educationInfoTypes {
     endYear: string,
 }
 
+export interface skillsTypes {
+    _id: string,
+    title: string,
+    technologies: technologyTypes[],
+}
+
 export interface projectTypes {
     _id: string,
     title: string,

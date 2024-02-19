@@ -11,6 +11,7 @@ const Navbar = async () => {
     return (
         <header>
             <Menu socialLinks={socialLinks} />
+            {/* <Menu /> */}
             <MobileMenu socialLinks={socialLinks} />
         </header>
     );
